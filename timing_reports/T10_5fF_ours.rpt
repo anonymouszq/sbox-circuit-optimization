@@ -1,0 +1,32 @@
+Startpoint: x[5] (input port clocked by virtual)
+Endpoint: y[0] (output port clocked by virtual)
+Path Group: virtual
+Path Type: max
+
+        Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------
+               0.000000    0.000000    0.000000   clock virtual (rise edge)
+                           0.000000    0.000000   clock network delay (ideal)
+                           0.000000    0.000000 v input external delay
+   4.549397    0.020000    0.000000    0.000000 v x[5] (in)
+   7.550083    0.019931    0.056710    0.056710 v u0/ZN (XNOR2_X1)
+   3.826602    0.019912    0.048592    0.105302 v u5/ZN (XNOR2_X1)
+   1.563845    0.011195    0.059201    0.164503 v u6/Z (XOR2_X1)
+   4.595693    0.028917    0.043850    0.208353 ^ u7/ZN (NOR2_X1)
+   4.465508    0.034525    0.063817    0.272169 ^ u8/Z (XOR2_X1)
+   5.000000    0.033952    0.053364    0.325533 ^ u11/ZN (XNOR2_X1)
+               0.033952    0.000000    0.325533 ^ y[0] (out)
+                                       0.325533   data arrival time
+
+               0.000000   10.000000   10.000000   clock virtual (rise edge)
+                           0.000000   10.000000   clock network delay (ideal)
+                           0.000000   10.000000   clock reconvergence pessimism
+                           0.000000   10.000000   output external delay
+                                      10.000000   data required time
+---------------------------------------------------------------------------------------
+                                      10.000000   data required time
+                                      -0.325533   data arrival time
+---------------------------------------------------------------------------------------
+                                       9.674468   slack (MET)
+
+

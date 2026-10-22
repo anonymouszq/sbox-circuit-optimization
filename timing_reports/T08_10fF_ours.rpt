@@ -1,0 +1,35 @@
+Startpoint: x[3] (input port clocked by virtual)
+Endpoint: y[0] (output port clocked by virtual)
+Path Group: virtual
+Path Type: max
+
+        Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------
+               0.000000    0.000000    0.000000   clock virtual (rise edge)
+                           0.000000    0.000000   clock network delay (ideal)
+                           0.000000    0.000000 ^ input external delay
+   7.614578    0.020000    0.000000    0.000000 ^ x[3] (in)
+   7.727520    0.049739    0.079651    0.079651 ^ u0/Z (XOR2_X1)
+   6.862184    0.022964    0.036351    0.116002 v u11/ZN (NAND2_X1)
+   5.613925    0.036911    0.057431    0.173432 ^ u16/ZN (XNOR2_X1)
+   4.307086    0.016544    0.026373    0.199806 v u19/ZN (NAND2_X1)
+   4.779618    0.014618    0.058721    0.258527 v u20/Z (XOR2_X1)
+   2.976938    0.017879    0.059854    0.318381 v u21/Z (XOR2_X1)
+   4.330455    0.027725    0.045255    0.363636 ^ u22/ZN (NOR2_X1)
+   9.060591    0.035124    0.066115    0.429751 ^ u28/Z (XOR2_X2)
+  10.000000    0.060319    0.093719    0.523470 ^ u37/Z (XOR2_X1)
+               0.060319    0.000000    0.523470 ^ y[0] (out)
+                                       0.523470   data arrival time
+
+               0.000000   10.000000   10.000000   clock virtual (rise edge)
+                           0.000000   10.000000   clock network delay (ideal)
+                           0.000000   10.000000   clock reconvergence pessimism
+                           0.000000   10.000000   output external delay
+                                      10.000000   data required time
+---------------------------------------------------------------------------------------
+                                      10.000000   data required time
+                                      -0.523470   data arrival time
+---------------------------------------------------------------------------------------
+                                       9.476530   slack (MET)
+
+
