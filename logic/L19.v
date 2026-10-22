@@ -1,0 +1,22 @@
+module sbox(input [4:0] x, output [4:0] y);
+  wire n0 = x[3] ^ x[4];
+  wire n1 = ~(x[0] ^ x[4]);
+  wire n2 = x[1] & n1;
+  wire n3 = n0 ^ n2;
+  wire n4 = ~(x[1] ^ x[2]);
+  wire n5 = x[1] | n4;
+  wire n6 = ~(n1 ^ n5);
+  wire n7 = ~(n3 ^ n6);
+  wire n8 = ~(x[1] ^ x[3]);
+  wire n9 = ~(n4 & n8);
+  wire n10 = ~(n1 ^ n9);
+  wire n11 = ~(x[4] & n0);
+  wire n12 = ~(n4 ^ n11);
+  wire n13 = ~(x[0] | n0);
+  wire n14 = n4 ^ n13;
+  assign y[0] = n7;
+  assign y[1] = n10;
+  assign y[2] = n12;
+  assign y[3] = n14;
+  assign y[4] = n3;
+endmodule
